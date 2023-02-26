@@ -15,6 +15,7 @@ from close.model.clip_t5_model import ClipT5Model, EmbeddingTokenizer
 from close.model.clip_t5_model import ClipT5Model, EmbeddingTokenizer
 from close.model.model import BeamSearchSpec
 from close.train.evaluator import VqaEvaluator, EntailmentEvaluator, CaptionEvaluator
+from transformers import T5Tokenizer
 
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"

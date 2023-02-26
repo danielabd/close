@@ -23,6 +23,8 @@ from close.utils import image_utils, pytorch_utils
 
 from close.utils.pytorch_utils import replace_parameters
 
+from transformers import T5Tokenizer
+
 CLIP_DIMS = {
   "ViT-B/32": 512,
   "ViT-L/14": 768,

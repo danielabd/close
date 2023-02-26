@@ -80,7 +80,8 @@ def add_stdout_logger():
 def clear_if_nonempty(output_dir, override=False):
   if output_dir:
     if exists(output_dir) and listdir(output_dir):
-      if override or get_yes_no("%s is non-empty, override (y/n)?" % output_dir):
+      # if override or get_yes_no("%s is non-empty, override (y/n)?" % output_dir):
+      if override:
         for x in listdir(output_dir):
           if isdir(join(output_dir, x)):
             rmtree(join(output_dir, x))
