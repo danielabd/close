@@ -12,6 +12,7 @@ from close.train.trainer import TrainerSimple
 from close.utils import py_utils
 
 from close.model.clip_t5_model import ClipT5Model, EmbeddingTokenizer
+from close.model.clip_t5_model import ClipT5Model, EmbeddingTokenizer
 from close.model.model import BeamSearchSpec
 from close.train.evaluator import VqaEvaluator, EntailmentEvaluator, CaptionEvaluator
 
@@ -31,7 +32,7 @@ DEFAULT_NOISE = {
 def main():
   parser = argparse.ArgumentParser("Train a CLOSE model")
 
-  parser.add_argument("--data", default="evqa")
+  parser.add_argument("--data", default="s-cap")
 
   # Model args
   parser.add_argument("--clip_model", default="ViT-L/14")
@@ -52,7 +53,7 @@ def main():
 
   # Where to save things
   parser.add_argument("--override", action="store_true")
-  parser.add_argument("--output_dir")
+  parser.add_argument("--output_dir", default=os.path.join(os.path.expanduser('~'),'projects','close','output_dir'))
 
   parser.add_argument("--debug", action="store_true",
                       help="Train with tiny dataset for debugging")

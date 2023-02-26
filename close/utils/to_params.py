@@ -94,7 +94,8 @@ def to_params_any(obj, annotation):
 
   # Base cases, no need to worry about annotations
   # note we allow incorrect typing here because I don't think it matters when loading the class
-  if obj_type in {str, int, float, bool, np.integer, np.floating, np.ndarray, np.bool}:
+  # if obj_type in {str, int, float, bool, np.integer, np.floating, np.ndarray, np.bool}:
+  if obj_type in {str, int, float, bool, np.integer, np.floating, np.ndarray}:
     return obj
 
   # Collections, if there are type annotations, try to preserve them, since we will need
